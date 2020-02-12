@@ -17,6 +17,7 @@ WebSphere Commerce typically depends heavily on indexes to improve SQL performan
 
 3. Avoid using wildcard (%) at the beginning of a predicate.
    The predicate LIKE '%abc' causes full table scan. For example:
+   
    ```sql 
    SELECT * FROM TABLE1 WHERE COL1 LIKE '%ABC'Copy
    ```
