@@ -10,7 +10,7 @@ WebSphere Commerce typically depends heavily on indexes to improve SQL performan
    The index is not used by the database if there is a function on the column. For example:
 
    ```sql
-   SELECT * FROM TABLE1 WHERE UPPER(COL1)='ABC'Copy
+   SELECT * FROM TABLE1 WHERE UPPER(COL1)='ABC'
    ```
 
    As a result of the function UPPER(), the index on COL1 is not used by database optimizers. OracleIf the function cannot be avoided in the SQL, you need to create a function-based index in Oracle or generated columns in DB2 to improve performance.
@@ -18,8 +18,8 @@ WebSphere Commerce typically depends heavily on indexes to improve SQL performan
 3. Avoid using wildcard (%) at the beginning of a predicate.
    The predicate LIKE '%abc' causes full table scan. For example:
    
-   ```sql 
-   SELECT * FROM TABLE1 WHERE COL1 LIKE '%ABC'Copy
+   ```sql
+   SELECT * FROM TABLE1 WHERE COL1 LIKE '%ABC'
    ```
       
    This is a known performance limitation in all databases.
